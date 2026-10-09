@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Top-Down Shooter - Local Multiplayer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>🎮 2D TOP-DOWN SHOOTER</h1>
+            <p class="subtitle">Local Multiplayer Action Game</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">P1 Health:</span>
+                <span class="stat-value" id="p1-health">100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">P2 Health:</span>
+                <span class="stat-value" id="p2-health">100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Score:</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Enemies:</span>
+                <span class="stat-value" id="enemy-count">0</span>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="controls">
+                <h3>🎮 Controls:</h3>
+                <p><strong>Player 1 (Blue):</strong> WASD to Move | Mouse Click to Shoot</p>
+                <p><strong>Player 2 (Red):</strong> Arrow Keys to Move | Number Keys/NumPad to Shoot</p>
+            </div>
+            <div class="game-status">
+                <h3 id="game-status">🟢 Ready!</h3>
+                <p>Press SPACE to Start Game</p>
+                <p>Press R to Restart | ESC to Quit</p>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="1200" height="700"></canvas>
+
+        <footer>
+            <p>Local Multiplayer Game - No Installation Required!</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
