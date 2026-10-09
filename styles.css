@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ff6b6b;
+    text-shadow: 4px 4px 0px #c74e4e, 8px 8px 0px rgba(0,0,0,0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 4px 4px 0px #c74e4e, 8px 8px 0px rgba(0,0,0,0.3); }
+    to { text-shadow: 6px 6px 0px #ff8787, 10px 10px 0px rgba(0,0,0,0.4); }
+}
+
+.subtitle {
+    font-size: 1em;
+    color: #a8dadc;
+    margin-top: 10px;
+    letter-spacing: 3px;
+}
+
+.stats-bar {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 3px solid #4a69bd;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 0.7em;
+    color: #ffd93d;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    min-width: 80px;
+    text-align: center;
+}
+
+#p1-health { color: #4facfe; }
+#p2-health { color: #ff6b6b; }
+#score { color: #ffd93d; animation: pulse 1s infinite; }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.game-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.controls h3, .game-status h3 {
+    font-size: 0.8em;
+    color: #6ab04c;
+    margin-bottom: 15px;
+}
+
+.controls p {
+    font-size: 0.7em;
+    line-height: 1.8;
+    color: #a8dadc;
+    margin: 8px 0;
+}
+
+.game-status {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 212, 90, 0.1);
+    border-radius: 10px;
+    border: 3px dashed #ffd93d;
+}
+
+#game-status {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.game-status p {
+    color: #fff;
+    margin: 5px 0;
+}
+
+canvas {
+    background: linear-gradient(180deg, 
+        #2d3436 0%, 
+        #1e272e 50%, 
+        #0984e3 100%);
+    border: 5px solid #4a69bd;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(74, 105, 189, 0.5);
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.6em;
+    color: #a8dadc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    .stats-bar { flex-wrap: wrap; gap: 20px; }
+    .game-info { flex-direction: column; }
+    canvas { width: 95vw !important; height: 60vh !important; border-width: 3px; }
+}
+
+/* CRT Effect Overlay */
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
